@@ -1,26 +1,25 @@
 import React, { useState } from 'react';
 import Resume from './Resume';
-import { Redirect, Route, Router } from 'react-router-dom';
 
 
+function Template( {data} ) {
 
-function Template( data ) {
+    
 
-    let templateStyle = ""
+    const [templateStyle , setStyle] = useState("")
+
     const clickHandler = ( t ) => {
-        templateStyle = t;
-        setPass(true)
+        setStyle(t);
+        setPass(true);
     }
 
     const [pass,setPass] = useState(false);
-
-    <Route path="/template/resume" render={ () =>  <Resume  data={data}  templateStyle={templateStyle}  />   } />
-
     
+
     
     if(pass)
     {
-        return <Redirect to="/template/resume" />
+        return <Resume data={data} templateStyle={templateStyle}/>
     }
 
     
@@ -28,7 +27,7 @@ function Template( data ) {
 
     return (
         <div>
-            <div onClick={() => clickHandler('template-1') }>
+            <div className ="me" onClick={() => clickHandler('template-1') }>
                 Template 1
             </div>
 

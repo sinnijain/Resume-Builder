@@ -1,10 +1,10 @@
 import React from 'react';
 
-function Resume({data,templateStyle}) {
-    
+function Resume( {data , templateStyle} ) {
+
     return (
         <div>
-            HI {templateStyle}
+            HI {data.name.fname} {templateStyle}
         </div>
     )
 }
