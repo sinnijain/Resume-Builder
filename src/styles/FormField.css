@@ -1,0 +1,17 @@
+.container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.form {
+    width: 50%;
+    float: left;
+    background-color: #ffffcc;
+}
+
+.resume {
+    width: 50%;
+    float: right;
+}
+

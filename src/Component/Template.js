@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Resume from './Resume';
+import styles from '../styles/template.css'
+import FormField from './FormField';
 
 
 function Template( {data} ) {
@@ -19,7 +21,7 @@ function Template( {data} ) {
     
     if(pass)
     {
-        return <Resume data={data} templateStyle={templateStyle}/>
+        return <FormField templateStyle={templateStyle}/>
     }
 
     

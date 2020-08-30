@@ -1,5 +1,4 @@
 import React, {  Component } from 'react';
-import Template from './Template';
 import Project from './Project'
 import Experience from './Experience';
 import Club from './Club';
@@ -7,6 +6,9 @@ import Event from './Event'
 import Info from './Info'
 import Education from './Education'
 import Skill from './Skill';
+import Resume from './Resume';
+
+import stylesheet from '../styles/FormField.css'
 
 
 
@@ -61,6 +63,9 @@ class FormField extends Component {
 
         this.initialState = this.state;
     }
+
+
+    
 
     
 
@@ -290,22 +295,26 @@ class FormField extends Component {
     render () 
     {
 
+        const { templateStyle } = this.props;
+
         const {data , validSubmission , status } = this.state;
 
         if(validSubmission)
         {
-            return <Template data={this.state.data} />
+            return <h4>You have done great</h4>
             
         }
 
 
         return ( 
 
-            <div className="Form"> 
-                <h1>Resume Builder</h1>
+            <div className="container"> 
+                
     
      
-                <form className="Form" >
+                <form className="form" >
+
+                    <h1>Resume Builder</h1>
 
                     <Info data={this.state.data} changeHandler={this.changeHandler}  ></Info>
 
@@ -380,9 +389,15 @@ class FormField extends Component {
                         <p></p>
                     </fieldset>
     
-                    <button  onClick={ this.handleSubmit } > Submit </button>    
+                    <button  onClick={ this.handleSubmit } > Submit </button>   
+
+                    
     
                 </form>
+
+                <div className='resume'>
+                    <Resume data={data} templateStyle={templateStyle} />
+                </div>
                
             </div>
          );
