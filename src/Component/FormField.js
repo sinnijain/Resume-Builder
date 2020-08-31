@@ -8,7 +8,7 @@ import Education from './Education'
 import Skill from './Skill';
 import Resume from './Resume';
 
-import stylesheet from '../styles/FormField.css'
+import '../styles/FormField.css'
 
 
 
@@ -129,7 +129,6 @@ class FormField extends Component {
             // console.log([name] , [parent]);
 
             let addStr = this.state.data[parent][name];
-            this.state.data[parent][name] = ""
             // let newArray = [ ]
             this.setState((prevState) => {
                 return {
@@ -139,6 +138,8 @@ class FormField extends Component {
                         [parent]: {
                             ...prevState.data[parent]
                             , whole : [ ...this.state.data[parent].whole , addStr],
+
+                            add : ""
                         }
                     }
                 };
